@@ -20,7 +20,7 @@ function Chat({ usuario }) {
   const cargarHistorial = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`https://software-arduino-back.vercel.app/api/chat/historial/${usuario.id}`);
+      const response = await fetch(`http://localhost:3000/api/chat/historial/${usuario.id}`);
       
       if (response.ok) {
         const historial = await response.json();
@@ -64,7 +64,7 @@ function Chat({ usuario }) {
         }));
 
       // Enviar historial al backend CON usuarioId
-      const response = await fetch('https://software-arduino-back.vercel.app/api/chat', {
+      const response = await fetch('http://localhost:3000/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

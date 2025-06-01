@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
       const endpoint = esRegistro ? 'registrar' : 'login';
       const body = esRegistro ? { nombre, correo, contraseña } : { correo, contraseña };
 
-      const respuesta = await fetch(`http://localhost:3000/api/usuarios/${endpoint}`, {
+      const respuesta = await fetch(`https://chatbot-periodista-backend.vercel.app/api/usuarios/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),

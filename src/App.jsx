@@ -15,7 +15,7 @@ function App() {
     if (window.confirm('¿Estás seguro de que quieres cerrar sesión? Te enviaremos tu historial por email.')) {
       try {
         // Llamar al endpoint de logout
-        const response = await fetch('http://localhost:3000/api/usuarios/logout', {
+        const response = await fetch('https://chatbot-periodista-backend.vercel.app/api/usuarios/logout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ usuarioId: usuario.id }),
